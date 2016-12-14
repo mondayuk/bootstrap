@@ -105,7 +105,10 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.multiMap', 'ui.bootstrap.
       return;
     }
 
-    openScope.isOpen = false;
+    if (openScope.isOpen) {
+      openScope.focusToggleElement()
+      openScope.isOpen = false;
+    }
 
     if (!$rootScope.$$phase) {
       openScope.$apply();
@@ -346,9 +349,6 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.multiMap', 'ui.bootstrap.
       }
 
       self.selectedOption = null;
-      
-      if (wasOpen) { scope.focusToggleElement(); }
-
     }
 
     if (angular.isFunction(setIsOpen)) {
