@@ -347,7 +347,7 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.multiMap', 'ui.bootstrap.
 
       self.selectedOption = null;
       
-      if (wasOpen) { openScope.focusToggleElement(); }
+      if (wasOpen) { scope.focusToggleElement(); }
 
     }
 
